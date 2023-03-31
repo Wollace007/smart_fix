@@ -1,0 +1,28 @@
+.navbar{
+    color: #ffffff;
+}
+.navbar:hover{
+    color: #fc8f00;
+}
+.call{
+    color:#ffffff;
+     font-size: 1.2rem;
+   }
+.call:hover{
+   
+    color:#fc8f00;
+}
+
+.type{
+    color:#fc8f00;
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+.linq{
+color: #fc8f00;
+text-decoration: none !important;
+}
+.linq:hover{
+    color: #000000;
+}
