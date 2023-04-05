@@ -39,15 +39,15 @@ const MultiCarousel = () => {
   };
 
   const data = [
-    { id: 1, title: 'Item 1' ,icon: '<add/>'},
-    { id: 2, title: 'Item 2',icon: '<Computer/>' },
-    { id: 3, title: 'Item 3',icon: '<add/>'},
-    { id: 4, title: 'Item 4' ,icon: '<add/>'},
-    { id: 5, title: 'Item 5' },
-    { id: 6, title: 'Item 6' },
-    { id: 7, title: 'Item 7' },
-    { id: 8, title: 'Item 8' },
-    { id: 9, title: 'Item 9' },
+    { id: 1, title: 'Item 1' ,icon: <Computer/>},
+    { id: 2, title: 'Item 2',icon: <Computer/>},
+    { id: 3, title: 'Item 3',icon: <Computer/>},
+    { id: 4, title: 'Item 4' ,icon: <Computer/>},
+    { id: 5, title: 'Item 5',icon: <Computer/> },
+    { id: 6, title: 'Item 6' ,icon: <Computer/>},
+    { id: 7, title: 'Item 7' ,icon: <Computer/>},
+    { id: 8, title: 'Item 8' ,icon: <Computer/>},
+    { id: 9, title: 'Item 9' ,icon: <Computer/>},
   ];
 
   const icons = [Computer, WaterDamage,Add];
@@ -60,14 +60,14 @@ const MultiCarousel = () => {
             {item.title}
             {item.icon}
           </Typography>
-          <ul>
+          {/* <ul>
       {icons.map((Icon, i) => (
          <li key={i}>
             <Icon/>
             
          </li>
       ))}
-   </ul>
+   </ul> */}
         </Paper>
       ))}
     </Carousel>
