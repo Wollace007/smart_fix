@@ -7,7 +7,7 @@ import Typewriter from 'typewriter-effect';
 import { Link } from 'react-router-dom';
 import handymanimage from '../media/images/happy-young-man.jpg'
 import repairtools from '../media/images/top-view-mechanical-tools-arrangement.jpg'
-import Testcarousel from '../components/homecarousel/Homecarousel';
+import Homecarousel from '../components/homecarousel/Homecarousel';
 function Home() {
 
   return (
@@ -142,7 +142,16 @@ function Home() {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Testcarousel />
+            <Homecarousel />
+          </Grid>
+          <Grid item xs={6}  style={{ display: "flex", flexDirection: "row", alignItems: 'center' }}>
+            <Box className='gradient-color' style={{ marginRight: "2", fontSize: "2.5rem", fontWeight: "bolder" }}>
+      1990
+    </Box>
+            <Box >
+              <Box sx={{ fontSize: "1.5rem", fontWeight: "bolder", color: "#fc8f00" }}>53 Years of Experience </Box>
+              <Box sx={{ fontSize: "2.1rem", fontWeight: "bolder", color: "#000000" }}>Success Experiences</Box>
+            </Box>
           </Grid>
           <Grid item xs={6}>
             <Card>step 4</Card>

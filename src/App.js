@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import { Route,BrowserRouter as Router, Routes } from 'react-router-dom';
 import Intropage from './tests/Test';
 import Homecarousel from './components/homecarousel/Homecarousel';
+import MultiCarousel from './components/homecarousel/Carosel';
  
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
        <Route path="/home"element={<Home/>}/>
        <Route path="/test"element={<Intropage/>}/>
       <Route path="/homecar"element={<Homecarousel/>}/>
+      <Route path="/homecar"element={<Homecarousel/>}/>
+      <Route path="/multi"element={<MultiCarousel/>}/>
+      
         </Routes>
       </Router>
     </>

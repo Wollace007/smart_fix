@@ -1,0 +1,24 @@
+
+.home-icon{
+  color:#fc8f00;
+  font-size: 43px !important;
+}
+.home-icon:hover{
+  color:inherit
+}
+
+.renovation{
+  color:inherit;
+  font-weight: bold !important;
+  font-size: 20px !important;
+}
+.renovation:hover{
+  
+  color:#fc8f00;
+}
+.gradient-color{
+ 
+    background: linear-gradient(135deg, orange 60%, cyan);
+    background-color: transparent;
+    /* background-image: linear-gradient(260deg, #FFA400 25%, #0B0F1E 100%); */
+}

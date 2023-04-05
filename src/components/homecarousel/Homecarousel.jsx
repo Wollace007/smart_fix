@@ -1,8 +1,11 @@
-import { Card, Grid, Paper } from '@mui/material';
+import { Card, Grid, Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react'
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+ import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { makeStyles } from '@material-ui/core/styles';
+ 
+
 import repair from "../../media/images/handyman app bar.jpg";
 import cap from "../../media/images/capenter.jpeg";
 import web from "../../media/images/Web developer.jpg";
@@ -14,11 +17,22 @@ import ground from "../../media/images/groundsman.jpg";
 import shoe from "../../media/images/shoemaker.jpg";
 import ac from "../../media/images/ac-installer.png";
 import interiordesigner from "../../media/images/interior-designer.jpg";
-import { Delete } from '@mui/icons-material';
+import { Computer, Delete, WaterDamageOutlined } from '@mui/icons-material';
+import repairtools from '../../media/images/top-view-mechanical-tools-arrangement.jpg'
+import './home.css'
 
-
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    height: 200,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: theme.palette.secondary.main,
+  },
+}));
 
 function Homecarousel() {
+  const classes = useStyles();
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -36,127 +50,230 @@ function Homecarousel() {
       slidesToSlide: 1 // optional, default to 1.
     }
   };
+ 
+  const data = [
+    { id: 1, 
+      title: ' Renovation Services',
+    description:' Curabitur et lorem et dolor iaculis convallis.',
+    background: 'https://img.freepik.com/free-photo/furniture-assembly-worker-standing-reading-instruction-using-tape-measure-worker-tools_482257-24849.jpg?w=826&t=st=1680436669~exp=1680437269~hmac=d320a53381e6a6f821685d530fca0edf05cc8e4fbd57657795fbe37772da09ca' 
+  },
+   
+    { id: 2, 
+      title: ' Renovation ',
+    description:' curabitur et lorem et dolor iaculis  convallis.',
+    background: 'https://img.freepik.com/free-photo/african-blogger-waving-audience-while-filming-podcast-air-production-internet-broadcast-host-streaming-live-content-recording-digital-social-media_482257-17276.jpg?w=740&t=st=1680436711~exp=1680437311~hmac=fe550861c11f97e1e94f95722b4d12af35c41a4f510afc21d2e38fb5e3c6d6b0',  
+    
+  },
+  
+    { id: 3, 
+      title: ' Renovation Services',
+      description:' Curabitur et lorem et dolor iaculis convallis.',
+    background: 'https://img.freepik.com/free-photo/sofware-developer-thinking-while-touching-beard-while-typing-laptop-sitting-desk-with-multiple-screens-parsing-code-focused-database-admin-working-with-team-coding-background_482257-33556.jpg?w=826&t=st=1680436763~exp=1680437363~hmac=c56909838cd59c974813c46699972f002f0accc3d64f279dadd99b4f9726b117'  
+  },
+   
+    { id: 4, 
+      title: ' Renovation Services',
+      description:' Curabitur et lorem et dolor iaculis convallis.',
+    background: 'https://img.freepik.com/free-photo/architect-engineer-pointing-architectural-building-prototype-analyzing-construction-model-computer-businessman-designer-working-remote-from-home-real-estate-project-modeling-sketch_482257-33964.jpg?w=740&t=st=1680436802~exp=1680437402~hmac=7f4f22393358bb6dd88ede189ccf5d4c0bda8041025f3b5271d58903c5a7a8ae'},
+   
+    { id: 5, 
+      title: ' Renovation Services',
+      description:' Curabitur et lorem et dolor iaculis convallis.',
+    background: 'https://img.freepik.com/free-photo/person-working-building-construction_23-2149184922.jpg?w=740&t=st=1680437454~exp=1680438054~hmac=144ccf5fd9d3d08101bfd0ee83190e2d632b61bafe17e2aa417f15c9ca66d4fd' 
+   },
+   
+    { id: 6, 
+      title: ' Renovation Services',
+      description:' Curabitur et lorem et dolor iaculis convallis.',
+    background: 'https://img.freepik.com/free-photo/tiler-working-renovation-apartment_23-2149278579.jpg?w=740&t=st=1680437513~exp=1680438113~hmac=bb7f6db9238f2788ebf89b21a4545b8a59239cf40a89f3e63dffc8348670928c' 
+   },
+   
+    { id: 7, 
+      title: ' Renovation Services',
+      description:' Curabitur et lorem et dolor iaculis convallis.',
+    background: 'https://img.freepik.com/free-photo/side-view-fashionable-beautiful-woman-shirt-holding-want-buying-elegant-red-dress-brunette-girl-with-long-hair-choosing-look-evening-spanding-time-shoppinh-mall_132075-12219.jpg?w=740&t=st=1680437602~exp=1680438202~hmac=186d7a1972e844c1638c7b43423ed7693327dcae298e1fdc16ea4220d36e4843' 
+   },
+   
+    { id: 8, 
+      title: ' Renovation Services',
+      description:' Curabitur et lorem et dolor iaculis convallis.',
+    background: 'https://img.freepik.com/free-photo/african-american-young-programmer-wearing-headphone-while-typing-security-codes-business-website-working-rmeote-from-home-employee-programming-software-application-software-screen_482257-28569.jpg?w=740&t=st=1680437727~exp=1680438327~hmac=43dbfa40840061127297bf4f310b2714110f18546685292b7239b5b0b62de79f' 
+   },
+   
+    { id: 9, 
+      title: ' Renovation Services',
+      description:' Curabitur et lorem et dolor iaculis convallis.',
+    background: 'https://img.freepik.com/premium-photo/plumber-fixing-white-sink-pipe-with-adjustable-wrench_34936-1945.jpg?w=740' 
+   },
+  ];
   return (
     <>
 
-      <Grid container spacing={2} style={{flexGrow:1,display:"flex"}}>
-        <Grid item xs={12} >
-          <Carousel
-            swipeable={true}
-            draggable={true}
-            showDots={true}
-            responsive={responsive}
-            infinite={true}
-            autoPlaySpeed={200}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={1000}
-            containerClass="carousel-container"
-            dotListClass="custom-dot-list-style"
-            // itemClass="carousel-item-padding-40-px"
-          // ssr={true} // means to render carousel on server-side.
-          // removeArrowOnDeviceType={["tablet", "mobile"]}
-          // deviceType={this.props.deviceType}
-          // autoPlay={this.props.deviceType !== "desktop" ? true : false}
-          >
+<Carousel responsive={responsive}>
+      {data.map((item) => (
+          <div style={{
+            width: '', height: '250px',
+            backgroundImage: `url(${item.background})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            borderRadius: '10px', 
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'center', alignItems: 'center',marginRight:'10px'
+          }}>
+            <div style={{
+              width: '60%', background: '#F7F7F7', position: 'absolute', top: '138px',
+              display: 'flex', justifyContent: 'center', alignItems: 'center',
+              border: 'none', flexDirection: "column"
+            }}>
+              <WaterDamageOutlined className='home-icon' />
             
-            <div style={{position: 'relative'}} > 
-              <img
-                style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={repair}
-              />
-              <div  style={{backgroundColor:"red", position: 'absolute'}}>
-                step 1
-              </div>
-              <button
-                        type='button'
-                        style={{
-                          position: 'absolute', border: 'none', borderRadius: '50px', padding: '0.2rem', right: '0.75rem', bottom: '0.75rem',
-                          backgroundColor: 'rgb(239 68 68)', fontSize: '1.25rem', lineHeight: '1.75rem', cursor: 'pointer', display: 'flex', alignItems: 'center'
-                        }}
-                      // onClick={deleteImage}
-                      >
-                        <Delete className='text-white' />
-                      </button>
+              <Typography className='renovation'>
+               {item.title}
+              </Typography>
+              <span  style={{ fontSize: "13px", width: '70%', display: 'flex',textAlign:'center', justifyContent:'center',flexDirection: "row !important" }}>
+              {item.description}
+              </span>
             </div>
-            <Box>
-              <img
+          </div>
+      
+      ))}
+    </Carousel>
+       {/* <Grid container spacing={2} style={{flexGrow:1,display:"flex"}}>
+         <Grid item xs={12} >
+           <Carousel
+             swipeable={true}
+             draggable={true}
+             showDots={true}
+             responsive={responsive}
+             infinite={true}
+             autoPlaySpeed={200}
+             keyBoardControl={true}
+             customTransition="all .5"
+             transitionDuration={1000}
+             containerClass="carousel-container"
+             dotListClass="custom-dot-list-style"
+           >
+            
+             <div style={{position: 'relative'}} > 
+               <img
                  style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={mec}
-              />
-            </Box>
-            <Box>
+                 alt="logo"
+                 src={repair}
+                 price:"400"
+               />
+               <div  style={{backgroundColor:"red", position: 'absolute'}}>
+                 step 1
+               </div>
+                          </div>
+             <Box>
+               <img
+                  style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={mec}
+               />
+             </Box>
+             <Box>
            
-              <img
-                style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={plum}
-              />
+               <img
+                 style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={plum}
+               />
             
-            </Box>
+             </Box>
             
-              <Box>
-              <img
-                style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={ele}
-              />
-              </Box>
-              <Box>
-              <img
-                style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={cap}
-              />
-              </Box>
-              <Box>
-              <img
-                style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={web}
-              />
-              </Box>
-              <Box>
-              <img
-                style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={cleaner}
-              />
-              </Box>
-              <Box>
-              <img
-                style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={ground}
-              />
-              </Box>
-              <Box>
-              <img
-                style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={shoe}
-              />
-              </Box>
-              <Box>
-              <img
-                style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
-                alt="logo"
-                src={ac}
-              />
-              </Box>
-              <Box>
-              <img
-                style={{ height: "40vh", width: "40vh",objectFit:"cover" }}
-                alt="logo"
-                src={interiordesigner}
-              />
-              </Box>
+               <Box>
+               <img
+                 style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={ele}
+               />
+               </Box>
+               <Box>
+               <img
+                 style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={cap}
+               />
+               </Box>
+               <Box>
+               <img
+                 style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={web}
+               />
+               </Box>
+               <Box>
+               <img
+                 style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={cleaner}
+               />
+               </Box>
+               <Box>
+               <img
+                 style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={ground}
+               />
+               </Box>
+               <Box>
+               <img
+                 style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={shoe}
+               />
+               </Box>
+               <Box>
+               <img
+                 style={{ height: "50vh", width: "50vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={ac}
+               />
+               </Box>
+               <Box>
+               <img
+                 style={{ height: "40vh", width: "40vh",objectFit:"cover" }}
+                 alt="logo"
+                 src={interiordesigner}
+               />
+               </Box>
             
-          </Carousel>
-        </Grid>
-      </Grid>
+           </Carousel>
+         </Grid>
+       </Grid> */}
+
+
+      
+
+
+      {/* <Grid item xs={4} sx={{ mb: 2 }}>
+        <div style={{
+          width: '', height: '250px',
+          backgroundImage: `url(${ele})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          borderRadius: '10px', 
+          position: 'relative',
+          display: 'flex',
+          justifyContent: 'center', alignItems: 'center'
+        }}>
+          <div style={{
+            width: '60%', background: '#F7F7F7', position: 'absolute', top: '138px',
+            display: 'flex', justifyContent: 'center', alignItems: 'center',
+            border: 'none', flexDirection: "column"
+          }}>
+            <WaterDamageOutlined className='home-icon' />
+            <Typography className='renovation'>
+              Renovation Services
+            </Typography>
+            <span  style={{ fontSize: "13px", width: '70%', display: 'flex',textAlign:'center', justifyContent:'center',flexDirection: "row !important" }}>
+              Curabitur et lorem et dolor iaculis convallis.
+            </span>
+          </div>
+        </div>
+      </Grid> */}
 
     </>
   )
