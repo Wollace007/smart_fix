@@ -1,5 +1,5 @@
-import { ChevronRight, Phone } from '@mui/icons-material';
-import { Box, Button, Card, Grid, Paper, TextField, Typography } from '@mui/material'
+import { Add, ChevronRight, Phone } from '@mui/icons-material';
+import { Box, Button, Card, Divider, Grid, Paper, TextField, Typography } from '@mui/material'
 import React from 'react'
 import Navbar from '../components/Navbar'
 import '../components/home.css';
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import handymanimage from '../media/images/happy-young-man.jpg'
 import repairtools from '../media/images/top-view-mechanical-tools-arrangement.jpg'
 import Homecarousel from '../components/homecarousel/Homecarousel';
+import Animatednumbers from '../components/Animatednumbers';
 function Home() {
 
   return (
@@ -144,17 +145,23 @@ function Home() {
           <Grid item xs={12}>
             <Homecarousel />
           </Grid>
-          <Grid item xs={6}  style={{ display: "flex", flexDirection: "row", alignItems: 'center' }}>
+          <Grid item xs={6} style={{ display: "flex", flexDirection: "row", alignItems: 'center', marginTop: "3rem" }}>
             <Box className='gradient-color' style={{ marginRight: "2", fontSize: "2.5rem", fontWeight: "bolder" }}>
-      1990
-    </Box>
-            <Box >
-              <Box sx={{ fontSize: "1.5rem", fontWeight: "bolder", color: "#fc8f00" }}>53 Years of Experience </Box>
-              <Box sx={{ fontSize: "2.1rem", fontWeight: "bolder", color: "#000000" }}>Success Experiences</Box>
+              1990
+            </Box>
+            <Box>
+              <Box sx={{ fontSize: "1.2rem", fontWeight: "bolder", color: "#fc8f00" }}>53 Years of Experience </Box>
+              <Box sx={{ fontSize: "2rem", fontWeight: "bolder", color: "#000000" }}>Success Experiences</Box>
             </Box>
           </Grid>
           <Grid item xs={6}>
-            <Card>step 4</Card>
+            <Card sx={{ backgroundColor: "#08011D" }}>
+              <Box> <Animatednumbers/> </Box>
+              <Box> step 2 </Box>
+              <Divider />
+              <Box> step 1 </Box>
+              <Box> step 2 </Box>
+            </Card>
           </Grid>
         </Grid>
       </Box>
