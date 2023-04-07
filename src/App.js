@@ -14,7 +14,6 @@ function App() {
        <Route path="/home"element={<Home/>}/>
        <Route path="/test"element={<Intropage/>}/>
       <Route path="/homecar"element={<Homecarousel/>}/>
-      <Route path="/homecar"element={<Homecarousel/>}/>
       <Route path="/multi"element={<MultiCarousel/>}/>
       
         </Routes>
