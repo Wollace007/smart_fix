@@ -24,3 +24,34 @@
   -webkit-text-fill-color: transparent;
 
 }
+.stepsIcon{
+color: #000;
+}
+.stepsIcon:hover{
+  color:#fc8f00;
+  }
+.steps{
+  /* color: #ffffff; */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.steps:hover{
+  color:#fc8f00;
+}
+
+.specialOffer{
+  color: #fc8f00;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.specialOffer:hover{
+  color: #000;
+}
+
+.offer{
+  color:#000;
+}
+.offer:hover{
+  color: #fc8f00;
+}
