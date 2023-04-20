@@ -13,6 +13,7 @@ import Animatednumbers from '../components/Animatednumbers';
 import Wrench from '../media/images/wrench.jpg';
 import electrician from '../media/images/repairingelectrical.jpg';
 import doorrepair from '../media/images/installeddoorlocker.jpg';
+import SpeedDialer from '../components/SpeedDialer';
 function Home() {
 
   return (
@@ -425,10 +426,23 @@ function Home() {
 
       <Grid container spacing={2}>
   <Grid item xs={6}>
-    step 1
+  {/* <video controls="" autoplay="" name="media">
+    <source 
+  src="https://she-bakes-bakery.000webhostapp.com/images/about_us%20video.mp4?autoplay=true&amp;loop=2&amp;autopause=0"
+   type="video/mp4"
+   />
+
+   </video> */}
   </Grid>
   <Grid item xs={6}>
-   step 2
+   <Box style={{color:"#fc8f00"}}>
+    Fix It Yourself
+   </Box>
+   <Box style={{fontSize:"3rem",fontWeight:"bolder"}}>
+    Quick Tips & Trick
+   </Box>
+    <SpeedDialer/>
+   
   </Grid>
 </Grid>
     </>
