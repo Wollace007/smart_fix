@@ -6,16 +6,18 @@ import Intropage from './tests/Test';
 import Homecarousel from './components/homecarousel/Homecarousel';
 import MultiCarousel from './components/homecarousel/Carosel';
  
+ 
+ 
+ 
 function App() {
   return (
     <>
       <Router>
         <Routes> 
-       <Route path="/home"element={<Home/>}/>
+       <Route path="/"element={<Home/>}/>
        <Route path="/test"element={<Intropage/>}/>
       <Route path="/homecar"element={<Homecarousel/>}/>
       <Route path="/multi"element={<MultiCarousel/>}/>
-      
         </Routes>
       </Router>
     </>
