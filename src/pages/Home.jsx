@@ -1,5 +1,5 @@
-import { Add, Bolt, ChevronRight, ContentPasteSearch, Cottage, EditCalendar, Engineering, MilitaryTech, Phone, PhoneInTalk } from '@mui/icons-material';
-import { Box, Button, Card, Divider, Grid, Paper, TextField, Typography } from '@mui/material'
+import { Add, Bolt, ChevronRight, Construction, ContentPasteSearch, Cottage, DoneOutline, EditCalendar, Engineering, MilitaryTech, Phone, PhoneInTalk, SupportAgent, Visibility, VisibilityOff } from '@mui/icons-material';
+import { Avatar, Box, Button, Card, Divider, Grid, IconButton, InputAdornment, MenuItem, Paper, TextField, TextareaAutosize, Typography } from '@mui/material'
 import React from 'react'
 import Navbar from '../components/Navbar'
 import '../components/home.css';
@@ -13,10 +13,38 @@ import Animatednumbers from '../components/Animatednumbers';
 import Wrench from '../media/images/wrench.jpg';
 import electrician from '../media/images/repairingelectrical.jpg';
 import doorrepair from '../media/images/installeddoorlocker.jpg';
-import SpeedDialer from '../components/SpeedDialer';
+import toolsonwood from '../media/images/toolsonwood.jpg';
+import plumbersmile from '../media/images/plumberwithwrench.jpg';
+import handshakes from '../media/images/shakinghands.jpg';
 import Youtuber from '../components/Youtube/Youtuber';
-function Home() {
+import MultiCarousel from '../components/homecarousel/MultiCarousel';
+// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
+const ariaLabel = { 'aria-label': 'description' };
+
+const service = [
+  {
+    value: 'electricity',
+    label: 'Electrical Repair',
+  },
+  {
+    value: 'home',
+    label: 'Home Repair',
+  },
+  {
+    value: 'plumber',
+    label: 'Plumbing repair',
+  },
+  {
+    value: 'renovation',
+    label: 'Building Renovation',
+  },
+];
+
+
+function Home() {
   return (
     <>
       <Box style={{
@@ -60,7 +88,7 @@ function Home() {
             </Box>
           </Grid>
         </Grid>
-        <Card style={{ flexGrow: 1, marginTop: "6rem", backgroundColor: "#08011D", padding: "2rem" }}>
+        <Card style={{ flexGrow: 1, marginTop: "12rem", backgroundColor: "#08011D", padding: "2rem" }}>
           <Grid container spacing={2} >
             <Grid item xs={6}>
               <Box sx={{ fontWeight: "bolder", color: "#fff" }}>
@@ -376,70 +404,306 @@ function Home() {
         </Grid>
         <Grid item xs={8} style={{ display: "flex", justifyContent: "center" }}>
           <Grid item xs={6}>
-            <Box style={{display:"flex"}}>
-              <Box style={{display:"flex"}}>
-              <span className='stepsIcon'> <Bolt fontSize="large" fontWeight="bolder"/> </span>
+            <Box style={{ display: "flex" }}>
+              <Box style={{ display: "flex" }}>
+                <span className='stepsIcon'> <Bolt fontSize="large" fontWeight="bolder" /> </span>
               </Box>
-              <Box style={{display:"flex",flexDirection:"column",marginLeft:"10px"}}>
-              <span className='offer' style={{fontWeight:"bold",fontSize:"1.4rem"}}> Fast Reliable Service</span>
-              <span>Lorem ipsum dolor sit amet consec tetur adipiscing elit sed eiusmod tempor incididunt.</span>
+              <Box style={{ display: "flex", flexDirection: "column", marginLeft: "10px" }}>
+                <span className='offer' style={{ fontWeight: "bold", fontSize: "1.4rem" }}> Fast Reliable Service</span>
+                <span>Lorem ipsum dolor sit amet consec tetur adipiscing elit sed eiusmod tempor incididunt.</span>
               </Box>
             </Box>
 
-            <Box style={{marginTop:"3rem"}}>
-            <Box style={{display:"flex",justifyContent:"flex-start"}}>
-              <Box style={{display:"flex"}}>
-              <span   className='stepsIcon'> <PhoneInTalk fontSize="large" fontWeight="bolder"/> </span>
+            <Box style={{ marginTop: "3rem" }}>
+              <Box style={{ display: "flex", justifyContent: "flex-start" }}>
+                <Box style={{ display: "flex" }}>
+                  <span className='stepsIcon'> <PhoneInTalk fontSize="large" fontWeight="bolder" /> </span>
+                </Box>
+                <Box style={{ display: "flex", flexDirection: "column", marginLeft: "10px" }}>
+                  <span className='offer' style={{ fontWeight: "bold", fontSize: "1.4rem" }}> Emergency Service</span>
+                  <span>Lorem ipsum dolor sit amet consec tetur adipiscing elit sed eiusmod tempor incididunt.</span>
+                </Box>
               </Box>
-              <Box style={{display:"flex",flexDirection:"column",marginLeft:"10px"}}>
-              <span className='offer' style={{fontWeight:"bold",fontSize:"1.4rem"}}> Emergency Service</span>
-              <span>Lorem ipsum dolor sit amet consec tetur adipiscing elit sed eiusmod tempor incididunt.</span>
-              </Box>
-            </Box>
             </Box>
           </Grid>
           <Grid item xs={6}>
             <Box>
-            <Box style={{display:"flex",justifyContent:"flex-start"}}>
-              <Box style={{display:"flex"}}>
-              <span   className='stepsIcon'> <Engineering fontSize="large" fontWeight="bolder"/> </span>
-              </Box>
-              <Box style={{display:"flex",flexDirection:"column",marginLeft:"10px"}}>
-              <span className='offer' style={{fontWeight:"bold",fontSize:"1.4rem"}}> Skill & Trained Personel</span>
-              <span>Lorem ipsum dolor sit amet consec tetur adipiscing elit sed eiusmod tempor incididunt.</span>
-              </Box>
-            </Box>
-              </Box>
-            <Box style={{marginTop:"3rem"}}>
-            <Box style={{display:"flex",justifyContent:"flex-start"}}>
-              <Box style={{display:"flex"}}>
-              <span   className='stepsIcon'> <Cottage fontSize="large" fontWeight="bolder"/> </span>
-              </Box>
-              <Box style={{display:"flex",flexDirection:"column",marginLeft:"10px"}}>
-              <span className='offer' style={{fontWeight:"bold",fontSize:"1.4rem"}}> 1 Year Warranty</span>
-              <span>Lorem ipsum dolor sit amet consec tetur adipiscing elit sed eiusmod tempor incididunt.</span>
+              <Box style={{ display: "flex", justifyContent: "flex-start" }}>
+                <Box style={{ display: "flex" }}>
+                  <span className='stepsIcon'> <Engineering fontSize="large" fontWeight="bolder" /> </span>
+                </Box>
+                <Box style={{ display: "flex", flexDirection: "column", marginLeft: "10px" }}>
+                  <span className='offer' style={{ fontWeight: "bold", fontSize: "1.4rem" }}> Skill & Trained Personel</span>
+                  <span>Lorem ipsum dolor sit amet consec tetur adipiscing elit sed eiusmod tempor incididunt.</span>
+                </Box>
               </Box>
             </Box>
+            <Box style={{ marginTop: "3rem" }}>
+              <Box style={{ display: "flex", justifyContent: "flex-start" }}>
+                <Box style={{ display: "flex" }}>
+                  <span className='stepsIcon'> <Cottage fontSize="large" fontWeight="bolder" /> </span>
+                </Box>
+                <Box style={{ display: "flex", flexDirection: "column", marginLeft: "10px" }}>
+                  <span className='offer' style={{ fontWeight: "bold", fontSize: "1.4rem" }}> 1 Year Warranty</span>
+                  <span>Lorem ipsum dolor sit amet consec tetur adipiscing elit sed eiusmod tempor incididunt.</span>
+                </Box>
               </Box>
+            </Box>
           </Grid>
         </Grid>
       </Grid>
 
-      <Grid container spacing={2} sx={{mb:'10rem',padding:'0px 3rem'}}>
-  <Grid item xs={6}>
-  <Youtuber/>
-  </Grid>
-  <Grid item xs={6}>
-   <Box style={{color:"#fc8f00"}}>
-    Fix It Yourself
-   </Box>
-   <Box style={{fontSize:"3rem",fontWeight:"bolder"}}>
-    Quick Tips & Trick
-   </Box>
-    <SpeedDialer/>
-   
-  </Grid>
-</Grid>
+      <Grid container spacing={2} sx={{ mb: '10rem', padding: '0px 3rem' }}>
+        <Grid item xs={6}>
+          <Youtuber />
+        </Grid>
+        <Grid item xs={6}>
+          <Box style={{ color: "#fc8f00" }}>
+            Fix It Yourself
+          </Box>
+          <Box style={{ fontSize: "3rem", fontWeight: "bolder" }}>
+            Quick Tips & Trick
+          </Box>
+          <Box style={{ display: "flex", flexDirection: "column" }}>
+            <Button variant="contained" size="small" style={{
+              borderStyle: "solid", borderWidth: "2px 2px 2px 2px",
+              borderRadius: "5px 5px 5px 5px", borderColor: "#fc8f00", color: "#000000", backgroundColor: "#FFFFFF", display: "flex", justifyContent: "space-between"
+            }}>
+              What System is Right For Me?
+              <InputAdornment position="end">
+                <IconButton>
+                  <Add />
+                </IconButton>
+              </InputAdornment>
+            </Button>
+            <span>Fringilla neque iaculis ut. Suspendisse quis justo nec nisi porta commodo mattis a dui.
+              Praesent sagittis nunc elit. Donec sed diam consequat egestas.</span>
+          </Box>
+
+          <Box style={{ display: "flex", flexDirection: "column" }}>
+            <Button variant="contained" size="small" style={{
+              borderStyle: "solid", borderWidth: "2px 2px 2px 2px",
+              borderRadius: "5px 5px 5px 5px", borderColor: "#fc8f00", color: "#000000", backgroundColor: "#FFFFFF", display: "flex", justifyContent: "space-between"
+            }}>
+              How much will it cost?
+              <InputAdornment position="end">
+                <IconButton>
+                  <Add />
+                </IconButton>
+              </InputAdornment>
+            </Button>
+            <span>Fringilla neque iaculis ut. Suspendisse quis justo nec nisi porta commodo mattis a dui.
+              Praesent sagittis nunc elit. Donec sed diam consequat egestas.</span>
+          </Box>
+
+          <Box style={{ display: "flex", flexDirection: "column" }}>
+            <Button variant="contained" size="small" style={{
+              borderStyle: "solid", borderWidth: "2px 2px 2px 2px",
+              borderRadius: "5px 5px 5px 5px", borderColor: "#fc8f00", color: "#000000", backgroundColor: "#FFFFFF", display: "flex", justifyContent: "space-between"
+            }}>
+              Simple steps for home renovation?
+              <InputAdornment position="end">
+                <IconButton>
+                  <Add />
+                </IconButton>
+              </InputAdornment>
+            </Button>
+            <span>Fringilla neque iaculis ut. Suspendisse quis justo nec nisi porta commodo mattis a dui.
+              Praesent sagittis nunc elit. Donec sed diam consequat egestas.</span>
+          </Box>
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Box style={{
+            backgroundImage: `url(${handshakes})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            height: "90vh"
+          }}>
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                <Box style={{ margin: "4rem" }}>
+                  <Box style={{ color: "#fc8f00", fontSize: "2rem", fontWeight: "bolder" }}>Customer say</Box>
+                  <Box style={{ fontSize: "3rem", fontWeight: "bold", color: "#FFFFFF" }}>We Are Trusted 15+ Countries Worldwide</Box>
+                  <Box>
+                    <Button variant="contained" size="large" style={{ backgroundColor: "#fc8f00", padding: "10px 41px" }}>
+                      VIEW ALL REVIEWS
+                    </Button>
+                  </Box>
+                </Box>
+              </Grid>
+              <Grid item xs={6}>
+                <Box>
+                  <MultiCarousel />
+                </Box>
+              </Grid>
+
+            </Grid>
+          </Box>
+        </Grid>
+
+      </Grid>
+
+      <Grid container spacing={2} style={{ flexGrow: 1, marginTop: '4rem' }}>
+        <Grid item xs={12}>
+          <Box style={{ color: "#fc8f00", display: "flex", justifyContent: "center", alignItems: "center" }}> Our Pricing & Plans</Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Box style={{ fontSize: "2rem", fontWeight: "bold", display: "flex", justifyContent: "center", alignItems: "center" }}> Best Maintenance Plans</Box>
+        </Grid>
+        <Grid item xs={6}>
+          <Box style={{ display: "flex", justifyContent: "flex-end" }}>
+            <div style={{ padding: "10px 20px 10px 20px", borderRadius: "5px 5px 0px 0px", width: "100px", height: "40px", backgroundColor: "#fc8f00" }}>
+              <Typography style={{ fontSize: "1.0rem", color: "#FFFFFF", fontWeight: "bolder" }}> 24% Off</Typography>
+            </div>
+          </Box>
+          <Card style={{ flexDirection: "row", display: "flex" }} >
+            <Box style={{ margin: "2rem" }}>
+              <Box>
+                <Construction sx={{ fontSize: 80, color: "#fc8f00" }} />
+              </Box>
+              <Box style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Commercial</Box>
+              <Box style={{ fontSize: "2rem", fontWeight: "bolder" }}>$115</Box>
+            </Box>
+            <div style={{ borderLeft: "3px solid grey", height: "200px", margin: "1rem" }} />
+            <Box style={{ display: "flex", flexDirection: "column", margin: "2rem" }}>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> Monthly Inspection</span>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> Maintenance</span>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> General Repair</span>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> Fixing Faulty Ring</span>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> Electrical Repair</span>
+            </Box>
+          </Card>
+        </Grid>
+        <Grid item xs={6}>
+          <Box style={{ display: "flex", justifyContent: "flex-end" }}>
+            <div style={{ padding: "10px 20px 10px 20px", borderRadius: "5px 5px 0px 0px", width: "100px", height: "40px", backgroundColor: "#fc8f00" }}>
+              <Typography style={{ fontSize: "1.0rem", color: "#FFFFFF", fontWeight: "bolder" }}> 24% Off</Typography>
+            </div>
+          </Box>
+          <Card style={{ flexDirection: "row", display: "flex" }} >
+            <Box style={{ margin: "2rem" }}>
+              <Box>
+                <Engineering sx={{ fontSize: 80, color: "#fc8f00" }} />
+              </Box>
+              <Box style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Residential</Box>
+              <Box style={{ fontSize: "2rem", fontWeight: "bolder" }}>$175</Box>
+            </Box>
+            <div style={{ borderLeft: "3px solid grey", height: "200px", margin: "1rem" }} />
+            <Box style={{ display: "flex", flexDirection: "column", margin: "2rem" }}>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> Monthly Inspection</span>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> Maintenance</span>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> General Repair</span>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> Fixing Faulty Ring</span>
+              <span style={{ fontSize: "1rem", fontWeight: "bold" }}><DoneOutline style={{ color: "#fc8f00" }} /> Electrical Repair</span>
+            </Box>
+          </Card>
+        </Grid>
+        <Grid item xs={12}>
+          <p style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center" }}>Fusce elementum pretium odio eu hendrerit.
+            Donec eu malesuada libero.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
+          </p>
+        </Grid>
+        <Grid item xs={12}>
+          <Box style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <Button variant="contained" size="large" style={{ backgroundColor: "#fc8f00", padding: "10px 41px" }}>
+              VIEW ALL PRICING
+            </Button>
+          </Box>
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={2} style={{ marginTop: "2rem" }}>
+        <Grid item xs={12}>
+          <Box style={{
+            backgroundImage: `url(${toolsonwood})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            height: "50vh"
+          }}>
+            <Box style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", padding: "5rem" }}>
+              <Box style={{ fontSize: "1.5rem", fontWeight: "bolder", color: "#fc8f00" }}>Don't Know What To Start With?</Box>
+              <Box style={{ fontSize: "2.5rem", fontWeight: "bolder", color: "#ffffff" }}>Get A Solutions For All Handyman Services</Box>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={2} style={{ position: "absolute", padding: "3rem" }}>
+        <Grid item xs={6}>
+          <Box style={{
+            backgroundImage: `url(${plumbersmile})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            height: "100vh"
+          }}>
+            <Paper elevation={0} sx={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-end", flexDirection: "row", position: "absolute", marginY: "30rem" }}>
+              <Box> <SupportAgent sx={{ fontSize: 90, color: "#fc8f00" }} /> </Box>
+              <Box style={{ flexDirection: "column" }}>
+                <Box sx={{ fontSize: 24, color: "#fc8f00", fontWeight: "bolder" }}>Need a service & ready to book?</Box>
+                <Box style={{ fontSize: "1.3rem", fontWeight: "bolder" }} >Call Us : +254 705 360 942 </Box>
+              </Box>
+
+            </Paper>
+          </Box>
+        </Grid>
+        <Grid item xs={6}>
+          <Box>
+            <Box style={{ fontSize: "1.3rem", fontWeight: "bolder", color: "#fc8f00" }}>Free Consultation</Box>
+            <Box sx={{ fontSize: "2.8rem", fontWeight: "bolder" }}>Get A Free Quote</Box>
+          </Box>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <TextField id="outlined-basic" label="Full Name" variant="outlined" placeholder="Full Name" inputProps={ariaLabel} />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField id="outlined-basic" label="E-mail" variant="outlined" placeholder="Email Address" inputProps={ariaLabel} />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField id="outlined-basic" label="Telephone" variant="outlined" placeholder="Telephone Number" inputProps={ariaLabel} />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField id="outlined-basic" label="Date" variant="outlined" placeholder="Enter Date" inputProps={ariaLabel} />
+               {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DatePicker />
+              </LocalizationProvider> */}
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                id="outlined-select-service"
+                select
+                label="Select Service"
+                defaultValue=""
+                helperText="Please select your service"
+                fullWidth
+              >
+                {service.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </Grid>
+            <Grid item xs={12}>
+              <TextareaAutosize
+                aria-label="minimum height"
+                minRows={6}
+                placeholder="Message"
+                style={{ width: 600 }}
+              />
+            </Grid>
+            <Grid item xs={12}>
+            <Button variant="contained" size="small" style={{ backgroundColor: "#fc8f00", padding: "2px 240px",display:"flex",alignItems:"flex-start" }}>
+                      GET A FREE QUOTE
+                    </Button>
+             </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+
     </>
   )
 }

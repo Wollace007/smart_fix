@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import { Route,BrowserRouter as Router, Routes } from 'react-router-dom';
 import Intropage from './tests/Test';
 import Homecarousel from './components/homecarousel/Homecarousel';
-import MultiCarousel from './components/homecarousel/Carosel';
+import MultiCarousel from './components/homecarousel/MultiCarousel';
  
  
  
