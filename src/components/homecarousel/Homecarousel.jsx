@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 
 
 import repair from "../../media/images/handyman app bar.jpg";
@@ -21,18 +21,18 @@ import { Architecture, Carpenter, CoPresent, Computer, Delete, Diamond, Gavel, P
 import repairtools from '../../media/images/top-view-mechanical-tools-arrangement.jpg'
 import './home.css'
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    height: 200,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: theme.palette.secondary.main,
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   paper: {
+//     height: 200,
+//     display: 'flex',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: theme.palette.secondary.main,
+//   },
+// }));
 
 function Homecarousel() {
-  const classes = useStyles();
+  // const classes = useStyles();
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

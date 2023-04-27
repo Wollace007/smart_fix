@@ -1,8 +1,6 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Typography } from '@material-ui/core';
 import { Add, Computer, FormatQuote, WaterDamage } from '@mui/icons-material';
 import { Avatar, Box } from '@mui/material';
 import Pict from "../../media/images/hat.jpg";
@@ -10,19 +8,20 @@ import mish from "../../media/images/mitchell.jpg";
 import manager from "../../media/images/manager.jpg";
 import marketing from "../../media/images/marketing manager.jpg";
 import account from "../../media/images/accountant.jpg";
+// import { makeStyles } from '@mui/styles'
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    height: 200,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: theme.palette.secondary.main,
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   paper: {
+//     height: 200,
+//     display: 'flex',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: theme.palette.secondary.main,
+//   },
+// }));
 
 const MultiCarousel = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const responsive = {
     superLargeDesktop: {

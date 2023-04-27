@@ -18,9 +18,10 @@ import plumbersmile from '../media/images/plumberwithwrench.jpg';
 import handshakes from '../media/images/shakinghands.jpg';
 import Youtuber from '../components/Youtube/Youtuber';
 import MultiCarousel from '../components/homecarousel/MultiCarousel';
-// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const ariaLabel = { 'aria-label': 'description' };
 
@@ -666,10 +667,12 @@ function Home() {
               <TextField id="outlined-basic" label="Telephone" variant="outlined" placeholder="Telephone Number" inputProps={ariaLabel} />
             </Grid>
             <Grid item xs={6}>
-              <TextField id="outlined-basic" label="Date" variant="outlined" placeholder="Enter Date" inputProps={ariaLabel} />
-               {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker />
-              </LocalizationProvider> */}
+              {/* <TextField id="outlined-basic" label="Date" variant="outlined" placeholder="Enter Date" inputProps={ariaLabel} /> */}
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']}>
+        <DatePicker label="Basic date picker" />
+      </DemoContainer>
+    </LocalizationProvider>
             </Grid>
             <Grid item xs={12}>
               <TextField
