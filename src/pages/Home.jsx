@@ -1,4 +1,4 @@
-import { Add, Bolt, ChevronRight, Construction, ContentPasteSearch, Cottage, DoneOutline, EditCalendar, Engineering, MilitaryTech, Phone, PhoneInTalk, SupportAgent, Visibility, VisibilityOff } from '@mui/icons-material';
+import { Add, Bolt, ChevronRight, Construction, ContentPasteSearch, Cottage, DoneOutline, EditCalendar, Engineering, MilitaryTech, Phone, PhoneInTalk, Quickreply, SupportAgent, Visibility, VisibilityOff } from '@mui/icons-material';
 import { Avatar, Box, Button, Card, Divider, Grid, IconButton, InputAdornment, MenuItem, Paper, TextField, TextareaAutosize, Typography } from '@mui/material'
 import React from 'react'
 import Navbar from '../components/Navbar'
@@ -18,10 +18,10 @@ import plumbersmile from '../media/images/plumberwithwrench.jpg';
 import handshakes from '../media/images/shakinghands.jpg';
 import Youtuber from '../components/Youtube/Youtuber';
 import MultiCarousel from '../components/homecarousel/MultiCarousel';
+import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import Footer from '../components/Footer';
 
 const ariaLabel = { 'aria-label': 'description' };
 
@@ -633,7 +633,7 @@ function Home() {
         </Grid>
       </Grid>
 
-      <Grid container spacing={2} style={{ position: "absolute", padding: "3rem" }}>
+      <Grid container spacing={2} style={{ padding: "3rem" }}>
         <Grid item xs={6}>
           <Box style={{
             backgroundImage: `url(${plumbersmile})`,
@@ -658,21 +658,20 @@ function Home() {
           </Box>
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <TextField id="outlined-basic" label="Full Name" variant="outlined" placeholder="Full Name" inputProps={ariaLabel} />
+              <TextField id="outlined-basic" fullWidth label="Full Name" variant="outlined" placeholder="Full Name" inputProps={ariaLabel} />
             </Grid>
             <Grid item xs={6}>
-              <TextField id="outlined-basic" label="E-mail" variant="outlined" placeholder="Email Address" inputProps={ariaLabel} />
+              <TextField id="outlined-basic" fullWidth label="E-mail" variant="outlined" placeholder="Email Address" inputProps={ariaLabel} />
             </Grid>
             <Grid item xs={6}>
-              <TextField id="outlined-basic" label="Telephone" variant="outlined" placeholder="Telephone Number" inputProps={ariaLabel} />
+              <TextField id="outlined-basic" fullWidth label="Telephone" variant="outlined" placeholder="Telephone Number" inputProps={ariaLabel} />
             </Grid>
-            <Grid item xs={6}>
-              {/* <TextField id="outlined-basic" label="Date" variant="outlined" placeholder="Enter Date" inputProps={ariaLabel} /> */}
+            <Grid item xs={6} >
               <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DatePicker']}>
-        <DatePicker label="Basic date picker" />
-      </DemoContainer>
-    </LocalizationProvider>
+                <DemoContainer components={['DatePicker']}>
+                  <DatePicker label="Enter Date" />
+                </DemoContainer>
+              </LocalizationProvider>
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -698,14 +697,43 @@ function Home() {
                 style={{ width: 600 }}
               />
             </Grid>
-            <Grid item xs={12}>
-            <Button variant="contained" size="small" style={{ backgroundColor: "#fc8f00", padding: "2px 240px",display:"flex",alignItems:"flex-start" }}>
-                      GET A FREE QUOTE
-                    </Button>
-             </Grid>
+            <Box style={{ marginLeft: "1rem" }}>
+              <Button variant="contained" size="small" fullWidth style={{ backgroundColor: "#fc8f00", padding: "8px 230px", display: "flex", alignItems: "flex-start" }}>
+                GET A FREE QUOTE
+              </Button>
+            </Box>
+
           </Grid>
         </Grid>
       </Grid>
+
+      <Card style={{ backgroundColor: "#e0f7fa", padding: "3rem", flexGrow: 2 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Box style={{ display: "flex", flexDirection: "row", }}>
+              <Box> <Quickreply sx={{ color: "#fc8f00", fontSize: 70 }} /></Box>
+              <Box style={{ flexDirection: "column", display: "flex",marginLeft:"2rem" }}>
+                <span style={{ fontSize: "2rem", fontWeight: "bolder" }}>Subscribe Our Newsletter</span>
+                <span>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</span>
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Box style={{ display: "flex", flexDirection: "row" }}>
+              <TextField id="outlined-basic" fullWidth label="Email" variant="outlined" placeholder="Email Address" inputProps={ariaLabel} />
+              <Button variant="contained" size="small" style={{ backgroundColor: "#fc8f00", padding: "10px 25px" }}>
+                SUBSCRIBE
+              </Button>
+            </Box>
+          </Grid>
+        </Grid>
+      </Card>
+
+      <Grid container spacing={2}>
+  <Grid item xs={12}>
+    <Footer/>
+  </Grid>
+</Grid>
 
     </>
   )
